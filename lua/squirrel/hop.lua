@@ -81,7 +81,10 @@ M.hop_linewise = function(opts)
             #(api.nvim_get_current_line()):match("^%s*"),
         },
     })
-    assert(node)
+    if not node then
+        vim.notify("no node under cursor", 1)
+        return
+    end
     local s, _, e, _ = node:range()
     -- get all smallest nodes on the current line
     while s == linenr and e == linenr do
@@ -120,11 +123,16 @@ M.hop = function(opts)
             #(api.nvim_get_current_line()):match("^%s*"),
         },
     })
-    assert(node)
+    if not node then
+        vim.notify("no node under cursor", 1)
+        return
+    end
     while node:parent() do
         node = node:parent()
     end
     local targets = utils.collect_visible_children(node, linenr, height)
+    -- use two char keybinds
+    key_iter.cnt = 19
     -- draw extmarks
     for _, target in ipairs(targets) do
         local srow, scol, erow, ecol = target:range()
