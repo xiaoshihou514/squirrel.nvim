@@ -2,7 +2,7 @@ local M = {}
 local marks = {}
 local api, ts = vim.api, vim.treesitter
 local ns = api.nvim_create_namespace("Squirrel")
-local utils = require("xsh.squirrel.utils")
+local utils = require("squirrel.utils")
 local key_iter, cleanup = utils.key_iter, utils.cleanup
 
 local function extmark_opts(k, id)
