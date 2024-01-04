@@ -1,4 +1,5 @@
 # 🐿️ squirrel.nvim
+[![LuaRocks](https://img.shields.io/luarocks/v/xiaoshihou514/squirrel.nvim?logo=lua&color=green)](https://luarocks.org/modules/xiaoshihou514/squirrel.nvim)
 
 _A small squirrel jumping around the syntax tree!_
 
@@ -12,10 +13,10 @@ https://github.com/xiaoshihou514/squirrel.nvim/assets/108414369/c8b53e88-459f-4f
 
 ## Installation
 
-Install like any other plugin
+Install like any other plugin, I would recommend using [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim), add the following to your `rocks.toml` by using `Rocks edit`
 
-```
-"xiaoshihou514/squirrel.nvim"
+```toml
+"squirrel.nvim" = "1.0.0"
 ```
 
 ## Keymaps
